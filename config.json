@@ -1,0 +1,42 @@
+{
+   "wallet": {
+       "addressKeyName": "AlloraX",
+       "chainId": "allora-testnet-1",
+       "addressRestoreMnemonic": "",
+       "alloraHomeDir": "/root/.allorad",
+       "gasPrices": "auto",
+       "gasPriceUpdateInterval": 5,
+       "maxFees": 50000000,
+       "gasAdjustment": 1.2,
+       "simulateGasFromStart": true,
+       "GasPerByte": 1,
+       "BaseGas": 200000,
+       "nodeRpcs": ["https://allora-rpc.testnet.allora.network"],
+       "nodegRpcs": ["allora-grpc.testnet.allora.network:443","testnet-allora.lavenderfive.com:443"],
+       "maxRetries": 5,
+       "retryDelay": 3,
+       "accountSequenceRetryDelay": 5,
+       "launchRoutineDelay": 5,
+       "submitTx": true,
+       "blockDurationEstimated": 6,
+       "windowCorrectionFactor": 0.8,
+       "timeoutRPCSecondsQuery": 60,
+       "timeoutRPCSecondsTx": 300,
+       "timeoutRPCSecondsRegistration": 300,
+       "timeoutHTTPConnection": 10
+   },
+  "reputer": [
+        {
+            "topicId": 13,
+            "groundTruthEntrypointName": "apiAdapter",
+            "lossFunctionEntrypointName": "apiAdapter",
+            "loopSeconds": 30,
+            "minStake": 100000,
+            "groundTruthParameters": {
+                "GroundTruthEndpoint": "http://truth:8099/reputer/{Topic}/{Token}/{BlockHeight}",
+                "Token": "ethereum",
+                "Topic:": "13"
+            }
+        }
+  ]
+}

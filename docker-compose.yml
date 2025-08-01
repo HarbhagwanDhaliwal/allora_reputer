@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  truth:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python -u /app/app.py
+    environment:
+      - API_PORT=8099
+    ports:
+      - "8099:8099"
+
+  reputer:
+    container_name: reputer
+    image: alloranetwork/allora-offchain-node:latest
+    volumes:
+      - ./truth-data:/data
+    depends_on:
+      - truth
+    env_file:
+      - ./worker-data/env_file
+
+volumes:
+  worker-data:
+  truth-data:
